@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Prisma X Teleoperation Intelligence Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<img src="assets/logo.png" class="logo">
+
+<!-- Welcome -->
+<div id="welcome-screen" class="screen">
+  <h1>Prisma X Teleoperation Intelligence Quiz</h1>
+  <button onclick="startQuiz()">Start Quiz</button>
+  <img src="assets/robot.png" class="robot">
+</div>
+
+<!-- Quiz -->
+<div id="quiz-screen" class="screen hidden">
+  <div class="quiz-box">
+
+    <div class="progress-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <div id="timer">Time: 15</div>
+
+    <h2 id="question-number"></h2>
+    <h3 id="question"></h3>
+    <div id="answers"></div>
+
+    <div class="controls">
+      <button onclick="prevQuestion()">⬅</button>
+      <button onclick="nextQuestion()">➡</button>
+      <button onclick="resetQuiz()">Reset</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Result -->
+<div id="result-screen" class="screen hidden">
+  <h2>Your Score: <span id="final-score"></span>/15</h2>
+  <p id="grade"></p>
+
+  <input type="text" id="username" placeholder="Enter your name">
+  <button onclick="saveScore()">Save Score</button>
+  <button onclick="shareScore()">Share on X</button>
+
+  <h3>Leaderboard</h3>
+  <ul id="leaderboard"></ul>
+
+  <button onclick="restart()">Restart</button>
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
